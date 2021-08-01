@@ -1,6 +1,17 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
+const connection = require("./database/database");
+const Pergunta = require("./database/pergunta");
+
+connection
+  .authenticate()
+  .then(() => {
+    console.log("conexão ok");
+  })
+  .catch((erro) => {
+    console.log(erro);
+  });
 
 // habilita o express a renderizar o html usando ejs
 app.set("view engine", "ejs");
