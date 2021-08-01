@@ -7,13 +7,18 @@
         <h3>Relizar Pergunta</h3>
       </div>
       <div class="card-body">
-        <form action="">
+        <form method="POST" action="/salvarpergunta">
           <label for="">Título</label>
-          <input type="text" placeholder="Titulo" class="form-control" />
+          <input
+            type="text"
+            placeholder="Titulo"
+            class="form-control"
+            name="titulo"
+          />
           <label for="">Descrição</label>
           <textarea
             placeholder="Descreva sua pergunta"
-            name=""
+            name="descricao"
             id=""
             class="form-control"
           ></textarea>
