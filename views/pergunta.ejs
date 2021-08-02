@@ -5,6 +5,26 @@
     <hr />
     <h1><%= pergunta.titulo %></h1>
     <p><%= pergunta.descricao %></p>
+    <hr />
+    <form action="/responder" method="POST">
+      <h3>Responda</h3>
+      <textarea
+        name="corpo"
+        placeholder="Sua reposta"
+        class="form-control"
+      ></textarea>
+      <input type="hidden" name="perguntaId" value="<%= pergunta.id %>" />
+      <button type="submit" class="btn btn-primary">Responder</button>
+    </form>
+    <hr />
+    <h3>Respostas</h3>
+    <hr />
+    <% respostas.forEach( resposta => { %>
+    <div class="card">
+      <div class="card-body"><%= resposta.corpo%><br /></div>
+    </div>
+
+    <% }) %>
   </div>
 </body>
 
